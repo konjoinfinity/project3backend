@@ -1,6 +1,6 @@
 # Models
 
-1. Profile (FULL CRUD)
+1. Pet (This is the Pet Profile which wil have FULL CRUD)
 
 - Name
 - Description

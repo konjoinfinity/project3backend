@@ -2,9 +2,13 @@ const mongoose = require("../db/connection");
 
 const UserSchema = new mongoose.Schema({
   email: String,
-  password: String
+  password: String,
+  pets: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Pet"
+    }
+  ]
 });
 
-mongoose.model("User", UserSchema);
-
-module.exports = mongoose;
+module.exports = mongoose.model("User", UserSchema);

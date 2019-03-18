@@ -18,8 +18,7 @@ User.remove({}).then(() => {
 							"Ginger is a sweet old pup with sandy brown fur and the beginnings of a gray moustache. Her hobbies include napping, letting her dad carry her around the neighborhood, and watching HGTV. That said, by 'watching' she really means 'sleeping on the heated tile in the basement while HGTV plays mindlessly in the background.'",
 						species: "Dog",
 						profilepicture: "https://i.imgur.com/uxKvuLC.jpg",
-						licks: 4,
-						boops: 7
+						licks: 4
 					}).then(pet => {
 						Promise.all([
 							Comment.create({ message: "I love to eat peanut butter!" }).then(
@@ -55,9 +54,8 @@ User.remove({}).then(() => {
 							"Gouda is a bouncy pupper who's just so darn excited to be growing up. Much like his namesake, he's got a bit of a chip on his shoulder, but he means it all in good fun--he loves fun!",
 						species: "Dog",
 						profilepicture: "https://i.imgur.com/DqAaeM3.jpg",
-						sociallinks: "https://www.instagram.com/goudacheeseball/",
-						licks: 10,
-						boops: 1
+						sociallink: "https://www.instagram.com/goudacheeseball/",
+						licks: 10
 					}).then(pet => {
 						Promise.all([
 							Comment.create({
@@ -88,9 +86,8 @@ User.remove({}).then(() => {
 							"Could there be a sassier dog than Sassy? Methinks not. Sassy loves wearing bows and bandanas, playing with her cat-brother Austin, and being the center of attention.",
 						species: "Dog",
 						profilepicture: "https://i.imgur.com/sw8R9Cg.jpg",
-						sociallinks: "https://www.instagram.com/sassythebabydog/",
-						licks: 0,
-						boops: 3
+						sociallink: "https://www.instagram.com/sassythebabydog/",
+						licks: 0
 					}).then(pet => {
 						Promise.all([
 							Comment.create({

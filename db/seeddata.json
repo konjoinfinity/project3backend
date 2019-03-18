@@ -1,0 +1,62 @@
+[
+	{
+		"username": "annabelle-taylor",
+		"password": "gingersmom",
+		"name": "Annabelle Taylor",
+		"pets": [
+			{
+				"name": "Ginger",
+				"description": "Ginger is a sweet old pup with sandy brown fur and the beginnings of a gray moustache. Her hobbies include napping, letting her dad carry her around the neighborhood, and watching HGTV. That said, by 'watching' she really means 'sleeping on the heated tile in the basement while HGTV plays mindlessly in the background.'",
+				"species": "Dog",
+				"profile-picture": "https://i.imgur.com/uxKvuLC.jpg",
+				"comments": [
+					{
+						"message": "Woof woof woof, is this thing on?"
+					},
+					{
+						"message": "I love to eat peanut butter!"
+					}
+				],
+				"licks": 4,
+				"boops": 7
+			}
+		]
+	},
+	{
+		"username": "cathy347le",
+		"password": "oconnorhonor",
+		"name": "Cathy Le",
+		"pets": [
+			{
+				"name": "Gouda",
+				"description": "Gouda is a bouncy pupper who's just so darn excited to be growing up. Much like his namesake, he's got a bit of a chip on his shoulder, but he means it all in good fun--he loves fun!",
+				"species": "Dog",
+				"profile-picture": "https://i.imgur.com/DqAaeM3.jpg",
+				"comments": [
+					{
+						"message": "I'm an Instagram celebrity!"
+					}
+				],
+				"social-links": "https://www.instagram.com/goudacheeseball/",
+				"licks": 10,
+				"boops": 1
+			}
+		]
+	},
+	{
+		"username": "sarahanntay",
+		"password": "gonolesgo",
+		"name": "Sarah Taylor",
+		"pets": [
+			{
+				"name": "Sassy",
+				"description": "Could there be a sassier dog than Sassy? Methinks not. Sassy loves wearing bows and bandanas, playing with her cat-brother Austin, and being the center of attention.",
+				"species": "Dog",
+				"profile-picture": "https://i.imgur.com/sw8R9Cg.jpg",
+				"social-links": "https://www.instagram.com/sassythebabydog/",
+				"licks": 0,
+				"boops": 3
+			}
+		]
+	}
+]

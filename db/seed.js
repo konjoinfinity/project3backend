@@ -1,8 +1,15 @@
-//const { Comment, Pet } = require("../models/profile");
+const Pet = require("../models/profile");
 const User = require("../models/user");
 
 User.deleteMany({}).then(() => {
-	console.log("users deleted");
+	// Pet.deleteMany({}).then(() => {
+	// 	Pet.create({
+	// 		name: "ginger"
+	// 	});
+});
+console.log("users deleted");
+Pet.create({
+	name: "ginger"
 });
 
 //User.deleteMany({}).then(() => {

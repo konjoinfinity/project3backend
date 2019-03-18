@@ -3,11 +3,7 @@ const mongoose = require("../db/connection");
 //Set up CommentSchema first, then Pet Schema. CommentSchema is a child of the Pet Schema,
 //Also want to export both in module exports
 const CommentSchema = new mongoose.Schema({
-  message: String,
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: "User"
-  }
+  message: String
 });
 
 const PetSchema = new mongoose.Schema({
@@ -17,14 +13,10 @@ const PetSchema = new mongoose.Schema({
     type: String,
     enum: ["Cat", "Dog"]
   },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: "User"
-  },
-  url: String,
-  likes: Number,
-  comments: [CommentSchema],
-  profile_picture: String
+  profilepicture: String,
+  sociallink: String,
+  licks: Number,
+  comments: [CommentSchema]
 });
 
 module.exports = {

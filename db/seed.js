@@ -75,6 +75,39 @@ User.remove({}).then(() => {
 						isSecureContext.save(err => console.log(err));
 					});
 			});
+
+			User.create({
+				username: "sarahanntay",
+				password: "gonolesgo",
+				name: "Sarah Taylor"
+			}).then(user => {
+				Promise.all([
+					Pet.create({
+						name: "Sassy",
+						description:
+							"Could there be a sassier dog than Sassy? Methinks not. Sassy loves wearing bows and bandanas, playing with her cat-brother Austin, and being the center of attention.",
+						species: "Dog",
+						profilepicture: "https://i.imgur.com/sw8R9Cg.jpg",
+						sociallinks: "https://www.instagram.com/sassythebabydog/",
+						licks: 0,
+						boops: 3
+					}).then(pet => {
+						Promise.all([
+							Comment.create({
+								message: "I'm an Instagram celebrity!"
+							}).then(comment => {
+								pet.comments.push(comment);
+							})
+						]);
+					})
+				])
+					.then(pet => {
+						user.pets.push(pet);
+					})
+					.then(() => {
+						isSecureContext.save(err => console.log(err));
+					});
+			});
 		});
 	});
 });

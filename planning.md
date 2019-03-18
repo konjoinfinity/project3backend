@@ -1,18 +1,18 @@
 # Facebark
 
-# Description
+### Description
 
 A social media app for pets, find your favorite pets, comment, lick, and create a profile for your pet! The facebark.
 
-# Delegate Tasks
+### Delegate Tasks
 
 All team members would like to work both on the front and back end. In order to accomplish that, the project tasks will be delegated base on features.
 
-# Git Work Flow
+### Git Work Flow
 
 Most of our work will be in the development branch. Feature branches will be created from the development branch. We’ll only merge to master when we deploy.
 
-# Models
+### Models
 
 1. Pet (This is the Pet Profile which wil have FULL CRUD)
 

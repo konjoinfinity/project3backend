@@ -29,3 +29,4 @@
 - Create file system (Profile, Comment, and User model)
 - Require dependencies in index.js
 - In Index.js connect the routes directory and listen to port 3001
+- Create user model and pet model

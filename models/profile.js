@@ -23,7 +23,8 @@ const PetSchema = new mongoose.Schema({
   },
   url: String,
   likes: Number,
-  comments: [CommentSchema]
+  comments: [CommentSchema],
+  profile_picture: String
 });
 
 module.exports = {

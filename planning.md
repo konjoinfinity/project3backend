@@ -9,6 +9,7 @@
 - Url (optional Social links for twitter and instagram)
 - [Number of likes] (Likes for profile, not comments)(Silver standard would be to conditional rendering the likes as Meows or Woofs)
 - [Comments]
+- Profile_picture
 
 2. Comment
 

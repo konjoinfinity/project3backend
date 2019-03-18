@@ -20,11 +20,12 @@
 
 - Username
 - password
-  3
 
 # Steps
 
 - Npm init -y
 - Install dependencies - Express, mongoose, body-parser, cors, nodemon
 - Install dependencies for authentication - passport, jwt-simple, passport-jwt
-- Create file system
+- Create file system (Profile, Comment, and User model)
+- Require dependencies in index.js
+- In Index.js connect the routes directory and listen to port 3001

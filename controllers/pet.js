@@ -1,12 +1,12 @@
 module.exports = {
   index: (req, res) => {
-    console.log("show all pets");
+    res.send("show all pets");
   },
   create: (req, res) => {
     console.log("create pet");
   },
   show: (req, res) => {
-    console.log("show single pet");
+    res.send("show single pet");
   },
   update: (req, res) => {
     console.log("update pet");

@@ -6,7 +6,7 @@ const petController = require("../controllers/pet");
 //Do not need routes for new and edit pet because React render the forms on the front end
 
 //Index: show all pets
-router.get("/", petController.index);
+// router.get("/", petController.index);
 
 //Create a pet profile
 router.post("/", petController.create);

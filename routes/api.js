@@ -4,6 +4,11 @@ const petController = require("../controllers/api");
 const commentController = require("../controllers/comment");
 
 router.get("/pets/", petController.index);
+router.post("/pets/", petController.create);
+router.get("/pets/:id", petController.show);
+router.put("/pets/:id", petController.update);
+router.delete("/pets/:id", petController.delete);
+
 router.get("/comments/", commentController.index);
 // router.get("/api/bourbons/:name", bourbonController.show);
 // router.post("/api/bourbons/", bourbonController.create);

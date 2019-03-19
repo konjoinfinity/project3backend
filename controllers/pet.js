@@ -1,17 +1,14 @@
 module.exports = {
-  index: (req, res) => {
-    res.send("show all pets");
-  },
   create: (req, res) => {
-    console.log("create pet");
+    Stadium.create(req.body).then(stadium => res.json(stadium));
   },
   show: (req, res) => {
-    res.send("show single pet");
+    Stadium.findOne({ _id: req.params.id }).then(stadium => res.json(stadium));
   },
   update: (req, res) => {
     console.log("update pet");
   },
   delete: (req, res) => {
-    console.log("delete pet");
+    Stadium.remove({ _id: req.params.id }).then(stadium => res.json(stadium));
   }
 };

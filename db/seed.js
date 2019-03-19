@@ -21,7 +21,9 @@ Pet.deleteMany({}).then(() => {
 				}).then(comment => {
 					pet.comments.push(comment);
 				})
-			]);
+			]).then(() => {
+				pet.save(err => console.log(err));
+			});
 		});
 
 		Pet.create({
@@ -39,7 +41,9 @@ Pet.deleteMany({}).then(() => {
 				}).then(comment => {
 					pet.comments.push(comment);
 				})
-			]);
+			]).then(() => {
+				pet.save(err => console.log(err));
+			});
 		});
 
 		Pet.create({
@@ -50,14 +54,6 @@ Pet.deleteMany({}).then(() => {
 			profilepicture: "https://i.imgur.com/sw8R9Cg.jpg",
 			sociallink: "https://www.instagram.com/sassythebabydog/",
 			licks: 0
-		}).then(pet => {
-			Promise.all([
-				Comment.create({
-					message: "I'm an Instagram celebrity!"
-				}).then(comment => {
-					pet.comments.push(comment);
-				})
-			]);
 		});
 	});
 });

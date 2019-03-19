@@ -9,4 +9,5 @@
 - In Index.js connect the routes directory and listen to port 3001
 - Create user model and pet model
 - Touch base with team and make sure everything is labeled the same as models and seed file
-- Annabelle working on the seed file - figure how to convert moongoose/JS into json
+- Annabelle working on the seed file - will need figure how to convert seed data to JSON
+- Rename profile model to pet model

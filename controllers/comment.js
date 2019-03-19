@@ -6,5 +6,10 @@ module.exports = {
 		Comment.find()
 			.then(comments => res.json(comments))
 			.catch(err => console.log(err));
+	},
+	show: function(req, res) {
+		Comment.findById(req.params.id)
+			.then(comment => res.json(comment))
+			.catch(err => console.log(err));
 	}
 };

@@ -1,30 +1,36 @@
-# Models
+# Facebark
 
-1. Profile (FULL CRUD)
+### Description
+
+A social media app for pets, find your favorite pets, comment, lick, and create a profile for your pet! The facebark.
+
+### Delegate Tasks
+
+All team members would like to work on the front and back end. In order to accomplish that, the project tasks will be delegated base on features. Team members will be responsible for making sure a certain feature works on both the front and back end.
+
+### Git Work Flow
+
+Most of our work will be in the development branch. Feature branches will be created from the development branch. We’ll only merge to master when we deploy.
+
+### Models
+
+1. Pet (aka the Pet profile which will have FULL CRUD)
 
 - Name
 - Description
 - Species (preselected category - start with cats and dogs)
-- Owner (Owner can have many pets would be Gold Standard)
-- Url (optional Social links for twitter and instagram)
-- [Number of likes] (Likes for profile, not comments)(Silver standard would be to conditional rendering the likes as Meows or Woofs)
+- Profile_picture (Owner can have many pets would be Gold Standard)
+- Social_link (optional Social links for twitter and instagram)
+- Licks (Likes for profile, not comments)(Silver standard would be to conditional rendering the likes as Meows or Woofs)
 - [Comments]
 
 2. Comment
 
 - Message
-- [Number of likes] (Gold standard)
-- Author (Gold standard)
 
 3. User
 
 - Username
 - password
-  3
-
-# Steps
-
-- Npm init -y
-- Install dependencies - Express, mongoose, body-parser, cors, nodemon
-- Install dependencies for authentication - passport, jwt-simple, passport-jwt
-- Create file system
+- name
+- pets - (references the pet schema)

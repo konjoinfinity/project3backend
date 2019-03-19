@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Comment = mongoose.model("Comment");
+const { Comment } = require("../models/pet");
 
 module.exports = {
   index: function(req, res) {

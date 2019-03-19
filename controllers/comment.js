@@ -24,7 +24,7 @@ module.exports = {
 	},
 	delete: function(req, res) {
 		Comment.findByIdAndDelete(req.params.id)
-			.then(() => Comments.find().then(comments => res.json(comments)))
+			.then(comment => res.json(comment))
 			.catch(err => console.log(err));
 	}
 };

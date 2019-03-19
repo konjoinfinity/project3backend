@@ -1,14 +1,24 @@
+const mongoose = require("mongoose");
+const Pet = mongoose.model("Pet");
+
 module.exports = {
+  index: (req, res) => {
+    Pet.find()
+      .then(pets => res.json(pets))
+      .catch(err => console.log(err));
+  },
   create: (req, res) => {
-    Stadium.create(req.body).then(stadium => res.json(stadium));
+    Pet.create(req.body).then(pet => res.json(pet));
   },
   show: (req, res) => {
-    Stadium.findOne({ _id: req.params.id }).then(stadium => res.json(stadium));
+    Pet.findOne({ _id: req.params.id }).then(pet => res.json(pet));
   },
   update: (req, res) => {
-    console.log("update pet");
+    Pet.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+      new: true
+    }).then(pet => res.json(pet));
   },
   delete: (req, res) => {
-    Stadium.remove({ _id: req.params.id }).then(stadium => res.json(stadium));
+    Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
   }
 };

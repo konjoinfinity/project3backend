@@ -1,23 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const { Pet, Comment } = require("../models/pet");
 const petController = require("../controllers/pet");
+const commentController = require("../controllers/comment");
 
-//Do not need routes for new and edit pet because React render the forms on the front end
+router.get("/pets/", petController.index);
+// router.post("/pets/", petController.create);
+// router.get("/pets/:id", petController.show);
+// router.put("/pets/:id", petController.update);
+// router.delete("/pets/:id", petController.delete);
 
-//Index: show all pets
-// router.get("/", petController.index);
-
-//Create a pet profile
-router.post("/", petController.create);
-
-//Show single pet profile
-router.get("/:id", petController.show);
-
-//Update pet profile
-router.put("/:id", petController.update);
-
-//Delete pet profile
-router.delete("/:id", petController.delete);
+// router.get("/comments", commentController.index);
+// router.get("/comments/:id", commentController.show);
+// router.post("/comments", commentController.create);
+// router.put("/comments/:id", commentController.update);
+// router.delete("/comments/:id", commentController.delete);
 
 module.exports = router;

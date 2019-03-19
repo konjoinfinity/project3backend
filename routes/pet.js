@@ -7,9 +7,17 @@ const petController = require("../controllers/pet");
 
 //Index: show all pets
 router.get("/pet", petController.index);
+
+//Create a pet profile
 router.post("/pet", petController.create);
+
+//Show single pet profile
 router.get("/pet/:id", petController.show);
+
+//Update pet profile
 router.put("/pet/:id", petController.update);
+
+//Delete pet profile
 router.delete("/pet/:id", petController.delete);
 
 module.exports = router;

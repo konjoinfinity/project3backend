@@ -4,6 +4,9 @@ const router = express.Router();
 router.use("/", require("./application"));
 router.use("/pet", require("./pet"));
 router.use("/api", require("./api"));
+// router.use("/api", (req, res) => {
+// 	res.send("api");
+// });
 // router.use("/user", require("./user"));
 
 // router.all('*', (req, res) => {

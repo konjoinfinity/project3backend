@@ -9,6 +9,9 @@ app.use(parser.json());
 // app.use(cors());
 
 app.use(require("./routes/index"));
+// app.get("/", function(req, res) {
+// 	res.send("hello world");
+// });
 
 app.set("port", process.env.PORT || 3001);
 

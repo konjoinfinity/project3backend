@@ -9,10 +9,10 @@ router.get("/pets/:id", petController.show);
 router.put("/pets/:id", petController.update);
 router.delete("/pets/:id", petController.delete);
 
-router.get("/comments/", commentController.index);
-// router.get("/api/bourbons/:name", bourbonController.show);
-// router.post("/api/bourbons/", bourbonController.create);
-// router.put("/api/bourbons/:name", bourbonController.update);
-// router.delete("/api/bourbons/:name", bourbonController.delete);
+router.get("/comments", commentController.index);
+router.get("/comments/:id", commentController.show);
+router.post("/comments", commentController.create);
+router.put("/comments/:id", commentController.update);
+router.delete("/comments/:id", commentController.delete);
 
 module.exports = router;

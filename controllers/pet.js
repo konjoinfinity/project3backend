@@ -22,3 +22,18 @@ module.exports = {
     Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
   }
 };
+
+// update: (req, res) => {
+//   let currentLicks;
+//   Pet.findOne({ _id: req.params.id }).then(pet => {
+//     if (req.body.lick) {
+//       currentLicks = pet.licks + 1;
+//     }
+//   })
+//     .then(() => {
+//       Pet.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+//         new: true
+//       }).then(pet => res.json(pet));
+
+//     })
+// },

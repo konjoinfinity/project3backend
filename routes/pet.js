@@ -8,6 +8,8 @@ router.post("/api/pets/", petController.create);
 router.get("/api/pets/:id", petController.show);
 router.put("/api/pets/:id", petController.update);
 router.delete("/api/pets/:id", petController.delete);
+router.put("/api/pets/:id/comment", petController.comment);
+router.put("/api/pets/:id/comment/delete", petController.delcomment);
 
 router.get("/api/comments", commentController.index);
 router.get("/api/comments/:id", commentController.show);

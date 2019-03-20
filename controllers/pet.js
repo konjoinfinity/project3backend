@@ -25,6 +25,32 @@ module.exports = {
   },
   delete: (req, res) => {
     Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
+  },
+
+  comment: (req, res) => {
+    const createComment = {
+      message: req.body.comment
+    };
+    Pet.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { comments: createComment } }
+    ).then(pet => {
+      pet.save((err, pet) => {
+        res.json(pet);
+      });
+    });
+  },
+
+  delcomment: (req, res) => {
+    const deleteComment = { _id: req.body.body };
+    Pet.findOneAndUpdate(
+      { _id: req.params.id },
+      { $pull: { comments: deleteComment } }
+    ).then(pet => {
+      pet.save((err, pet) => {
+        res.json(pet);
+      });
+    });
   }
 };
 

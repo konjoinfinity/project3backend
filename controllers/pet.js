@@ -13,18 +13,27 @@ module.exports = {
   show: (req, res) => {
     Pet.findOne({ _id: req.params.id }).then(pet => res.json(pet));
   },
+
   update: (req, res) => {
+    Pet.findByIdAndUpdate({ _id: req.params.id }, req.body, {
+      new: true
+    }).then(pet => res.json(pet));
+  },
+
+  delete: (req, res) => {
+    Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
+  },
+
+  lickUpdate: (req, res) => {
     Pet.findByIdAndUpdate(
       { _id: req.params.id },
       { $inc: { licks: 1 } },
-      req.body,
-      {
-        new: true
-      }
-    ).then(pet => res.json(pet));
-  },
-  delete: (req, res) => {
-    Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
+      { new: true }
+    ).then(pet => {
+      pet.save((err, pet) => {
+        res.json(pet);
+      });
+    });
   },
 
   comment: (req, res) => {
@@ -53,18 +62,3 @@ module.exports = {
     });
   }
 };
-
-// update: (req, res) => {
-//   let currentLicks;
-//   Pet.findOne({ _id: req.params.id }).then(pet => {
-//     if (req.body.lick) {
-//       currentLicks = pet.licks + 1;
-//     }
-//   })
-//     .then(() => {
-//       Pet.findByIdAndUpdate({ _id: req.params.id }, req.body, {
-//         new: true
-//       }).then(pet => res.json(pet));
-
-//     })
-// },

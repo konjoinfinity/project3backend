@@ -13,6 +13,7 @@ module.exports = {
 			.catch(err => console.log(err));
 	},
 	create: function(req, res) {
+		console.log(req.params._id);
 		Comment.create(req.body)
 			.then(comment => res.json(comment))
 			.catch(err => console.log(err));

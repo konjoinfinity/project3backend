@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { Pet, Comment } = require("../models/pet");
 
 module.exports = {
+
 	index: (req, res) => {
 		Pet.find()
 			.then(pets => res.json(pets))
@@ -34,6 +35,19 @@ module.exports = {
 			});
 		});
 	},
+
+
+lickUpdate: (req, res) => {
+    Pet.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $inc: { licks: 1 } },
+      { new: true }
+    ).then(pet => {
+      pet.save((err, pet) => {
+        res.json(pet);
+      });
+    });
+  },
 
 	delcomment: (req, res) => {
 		const deleteComment = { _id: req.body.body };

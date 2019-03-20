@@ -14,9 +14,14 @@ module.exports = {
     Pet.findOne({ _id: req.params.id }).then(pet => res.json(pet));
   },
   update: (req, res) => {
-    Pet.findByIdAndUpdate({ _id: req.params.id }, req.body, {
-      new: true
-    }).then(pet => res.json(pet));
+    Pet.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $inc: { licks: 1 } },
+      req.body,
+      {
+        new: true
+      }
+    ).then(pet => res.json(pet));
   },
   delete: (req, res) => {
     Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));

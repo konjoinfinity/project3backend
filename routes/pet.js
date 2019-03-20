@@ -12,6 +12,7 @@ router.put("/api/pets/:id/comment", petController.comment);
 router.put("/api/pets/:id/comment/delete", petController.delcomment);
 
 router.get("/api/comments", commentController.index);
+router.get("/api/comments/:id/author", commentController.author);
 router.get("/api/comments/:id", commentController.show);
 router.post("/api/comments", commentController.create);
 router.put("/api/comments/:id", commentController.update);

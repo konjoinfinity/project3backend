@@ -4,7 +4,7 @@ const { Pet, Comment } = require("../models/pet");
 module.exports = {
 	author: function(req, res) {
 		Pet.findOne({ "comments._id": req.params.id }).then(result =>
-			res.json(result.name)
+			res.json(result)
 		);
 	},
 	index: function(req, res) {

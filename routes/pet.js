@@ -17,6 +17,6 @@ router.get("/api/comments/:id/author", commentController.author);
 router.get("/api/comments/:id", commentController.show);
 router.post("/api/comments", commentController.create);
 router.put("/api/comments/:id", commentController.update);
-router.delete("/api/comments/:id", commentController.delete);
+//router.delete("/api/comments/:id", commentController.delete);
 
 module.exports = router;

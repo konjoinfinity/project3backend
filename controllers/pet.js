@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const { Pet, Comment } = require("../models/pet");
 
 module.exports = {
-
 	index: (req, res) => {
 		Pet.find()
 			.then(pets => res.json(pets))
@@ -36,21 +35,21 @@ module.exports = {
 		});
 	},
 
-
-lickUpdate: (req, res) => {
-    Pet.findByIdAndUpdate(
-      { _id: req.params.id },
-      { $inc: { licks: 1 } },
-      { new: true }
-    ).then(pet => {
-      pet.save((err, pet) => {
-        res.json(pet);
-      });
-    });
-  },
+	lickUpdate: (req, res) => {
+		Pet.findByIdAndUpdate(
+			{ _id: req.params.id },
+			{ $inc: { licks: 1 } },
+			{ new: true }
+		).then(pet => {
+			pet.save((err, pet) => {
+				res.json(pet);
+			});
+		});
+	},
 
 	delcomment: (req, res) => {
 		const deleteComment = { _id: req.body.body };
+		console.log(deleteComment);
 		Pet.findOneAndUpdate(
 			{ _id: req.params.id },
 			{ $pull: { comments: deleteComment } }
@@ -59,5 +58,9 @@ lickUpdate: (req, res) => {
 				res.json(pet);
 			});
 		});
+
+		Comment.findByIdAndDelete(deleteComment._id).then(comment =>
+			res.json(comment)
+		);
 	}
 };

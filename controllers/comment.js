@@ -32,6 +32,7 @@ module.exports = {
 	},
 	delete: function(req, res) {
 		Comment.findByIdAndDelete(req.params.id)
+
 			.then(comment => res.json(comment))
 			.catch(err => console.log(err));
 	}

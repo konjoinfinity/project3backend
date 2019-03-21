@@ -1,4 +1,4 @@
-# Facebark
+# Petz
 
 ### Description
 
@@ -90,3 +90,4 @@ Most of our work will be in the development branch. Feature branches will be cre
 - Readme and planning.md documentation. Add a user story
 - Add more styling/refactor if time
 - Deploy app
+- Prep for presentation

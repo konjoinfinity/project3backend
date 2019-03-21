@@ -10,7 +10,7 @@ app.use(parser.json());
 app.use(passport.initialize());
 app.use(cors());
 
-app.use("/users", userController);
+app.use("/api/users", userController);
 
 app.use(require("./routes/index"));
 

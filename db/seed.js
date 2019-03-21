@@ -96,6 +96,25 @@ Pet.deleteMany({}).then(() => {
     });
 
     Pet.create({
+      name: "Skywhiskers",
+      description:
+        "Wall flower cat who enjoys the slinking in the background.  Takes care of herself, you never saw this cat... Secret Ability: High Jump",
+      species: "Cat",
+      profilepicture: "https://i.imgur.com/C6Fkmp2.jpg",
+      licks: 8
+    }).then(pet => {
+      Promise.all([
+        Comment.create({
+          message: "The fridge looks high, lemme get on top!"
+        }).then(comment => {
+          pet.comments.push(comment);
+        })
+      ]).then(() => {
+        pet.save(err => console.log(err));
+      });
+    });
+
+    Pet.create({
       name: "Flynn Rider",
       description: "So I hear I can go to work with my human. HAMMAD!!!",
       species: "Dog",

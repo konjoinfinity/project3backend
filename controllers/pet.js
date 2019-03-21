@@ -20,13 +20,12 @@ module.exports = {
 	},
 	delete: (req, res) => {
 		Pet.findByIdAndDelete(req.params.id).then(pet => {
-			const test = pet.comments.forEach(comment => console.log(comment._id));
-			console.log(test);
-			res.json(pet.comments);
-			//Comment.findById({ $in: [pet.comments._id] }).then(result =>
-			//console.log(result)
-			//);
-			//res.json(pet);
+			pet.comments.forEach(comment =>
+				Comment.findByIdAndDelete(comment._id).then(comment =>
+					res.json(comment)
+				)
+			);
+			res.json(pet);
 		});
 	},
 

@@ -9,6 +9,8 @@ module.exports = {
 	},
 	index: function(req, res) {
 		Comment.find()
+			.sort({ createdAt: -1 })
+			.limit(10)
 			.then(comments => res.json(comments))
 			.catch(err => console.log(err));
 	},

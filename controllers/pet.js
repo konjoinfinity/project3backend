@@ -19,7 +19,15 @@ module.exports = {
 		}).then(pet => res.json(pet));
 	},
 	delete: (req, res) => {
-		Pet.remove({ _id: req.params.id }).then(pet => res.json(pet));
+		Pet.findByIdAndDelete(req.params.id).then(pet => {
+			const test = pet.comments.forEach(comment => console.log(comment._id));
+			console.log(test);
+			res.json(pet.comments);
+			//Comment.findById({ $in: [pet.comments._id] }).then(result =>
+			//console.log(result)
+			//);
+			//res.json(pet);
+		});
 	},
 
 	comment: (req, res) => {

@@ -65,9 +65,13 @@ Pet.deleteMany({}).then(() => {
       licks: 8
     }).then(pet => {
       Promise.all([
+        Comment.create({ message: "Why does Zakk have two k's?" }).then(
+          comment => {
+            pet.comments.push(comment);
+          }
+        ),
         Comment.create({
-          message:
-            "Does anyone know when my human is going to come home. I'm ready for my walk."
+          message: "I like Sarah better than Zakk :-D"
         }).then(comment => {
           pet.comments.push(comment);
         })
@@ -115,11 +119,40 @@ Pet.deleteMany({}).then(() => {
     });
 
     Pet.create({
+      name: "Snowflake",
+      description:
+        "Snowflake is skiddish and loves to get what she wants.  Be careful, she will bite or scratch even if you are taking care of her. If you can get her to sit on your lap or chest, she likes you.",
+      species: "Cat",
+      profilepicture: "https://i.imgur.com/3O7LHej.jpg",
+      licks: 6
+    }).then(pet => {
+      Promise.all([
+        Comment.create({
+          message: "I'm hungry."
+        }).then(comment => {
+          pet.comments.push(comment);
+        })
+      ]).then(() => {
+        pet.save(err => console.log(err));
+      });
+    });
+
+    Pet.create({
       name: "Flynn Rider",
       description: "So I hear I can go to work with my human. HAMMAD!!!",
       species: "Dog",
       profilepicture: "https://i.imgur.com/3n7t9vy.jpg",
       licks: 5
+    }).then(pet => {
+      Promise.all([
+        Comment.create({
+          message: "I want to see the yellow construction hat more often!"
+        }).then(comment => {
+          pet.comments.push(comment);
+        })
+      ]).then(() => {
+        pet.save(err => console.log(err));
+      });
     });
 
     Pet.create({

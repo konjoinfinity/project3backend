@@ -173,7 +173,7 @@ Pet.deleteMany({}).then(() => {
       description:
         "Buddy is a beagle with a lot of chub to love. If you are in the habit of body-shaming dogs, then sashay away, because Buddy accepts good vibes only (and treats).",
       species: "Dog",
-      profilepicture: "https://i.imgur.com/Uv00NrC.png",
+      profilepicture: "https://i.imgur.com/jsoiRHr.jpg",
       licks: 7
     });
     Pet.create({
@@ -217,6 +217,21 @@ Pet.deleteMany({}).then(() => {
       species: "Dog",
       profilepicture: "https://i.imgur.com/wqhDS3l.jpg",
       licks: 1
+    });
+    Pet.create({
+      name: "Bear",
+      description: "I love long walks and long showers",
+      species: "Dog",
+      profilepicture: "https://i.imgur.com/YhT6wD7b.jpg",
+      licks: 15
+    });
+    Pet.create({
+      name: "Tiger",
+      description:
+        "See the look in my eyes? Yeah, be very afraid. I'm the boss in my house",
+      species: "Cat",
+      profilepicture: "https://i.imgur.com/tZ96xzN.jpg",
+      licks: 9
     });
   });
 });

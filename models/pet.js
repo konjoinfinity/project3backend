@@ -3,7 +3,11 @@ const mongoose = require("../db/connection");
 //Set up CommentSchema first, then Pet Schema. CommentSchema is a child of the Pet Schema,
 //Also want to export both in module exports
 const CommentSchema = new mongoose.Schema({
-	message: String
+	message: String,
+	createdAt: {
+		type: Date,
+		default: Date.now()
+	}
 });
 
 const PetSchema = new mongoose.Schema({
@@ -15,7 +19,10 @@ const PetSchema = new mongoose.Schema({
 	},
 	profilepicture: String,
 	sociallink: String,
-	licks: Number,
+	licks: {
+		type: Number,
+		default: 0
+	},
 	comments: [CommentSchema]
 });
 

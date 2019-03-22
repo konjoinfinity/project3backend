@@ -65,9 +65,13 @@ Pet.deleteMany({}).then(() => {
       licks: 8
     }).then(pet => {
       Promise.all([
+        Comment.create({ message: "Why does Zakk have two k's?" }).then(
+          comment => {
+            pet.comments.push(comment);
+          }
+        ),
         Comment.create({
-          message:
-            "Does anyone know when my human is going to come home. I'm ready for my walk."
+          message: "I like Sarah better than Zakk :-D"
         }).then(comment => {
           pet.comments.push(comment);
         })

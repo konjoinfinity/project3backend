@@ -115,6 +115,25 @@ Pet.deleteMany({}).then(() => {
     });
 
     Pet.create({
+      name: "Snowflake",
+      description:
+        "Snowflake is skiddish and loves to get what she wants.  Be careful, she will bite or scratch even if you are taking care of her. If you can get her to sit on your lap or chest, she likes you.",
+      species: "Cat",
+      profilepicture: "https://i.imgur.com/3O7LHej.jpg",
+      licks: 6
+    }).then(pet => {
+      Promise.all([
+        Comment.create({
+          message: "I'm hungry."
+        }).then(comment => {
+          pet.comments.push(comment);
+        })
+      ]).then(() => {
+        pet.save(err => console.log(err));
+      });
+    });
+
+    Pet.create({
       name: "Flynn Rider",
       description: "So I hear I can go to work with my human. HAMMAD!!!",
       species: "Dog",

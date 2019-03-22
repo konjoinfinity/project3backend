@@ -143,6 +143,16 @@ Pet.deleteMany({}).then(() => {
       species: "Dog",
       profilepicture: "https://i.imgur.com/3n7t9vy.jpg",
       licks: 5
+    }).then(pet => {
+      Promise.all([
+        Comment.create({
+          message: "I want to see the yellow construction hat more often!"
+        }).then(comment => {
+          pet.comments.push(comment);
+        })
+      ]).then(() => {
+        pet.save(err => console.log(err));
+      });
     });
 
     Pet.create({

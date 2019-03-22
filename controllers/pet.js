@@ -36,9 +36,7 @@ module.exports = {
         { _id: req.params.id },
         { $push: { comments: newCommentRequest } }
       ).then(pet => {
-        // pet.save((err, pet) => {
         res.json(pet);
-        // });
       });
     });
   },
@@ -49,9 +47,7 @@ module.exports = {
       { $inc: { licks: 1 } },
       { new: true }
     ).then(pet => {
-      // pet.save((err, pet) => {
       res.json(pet);
-      // });
     });
   },
 
@@ -61,9 +57,7 @@ module.exports = {
       { _id: req.params.id },
       { $pull: { comments: deleteComment } }
     ).then(pet => {
-      // pet.save((err, pet) => {
       res.json(pet);
-      // });
     });
 
     Comment.findByIdAndDelete(deleteComment._id).then(comment =>

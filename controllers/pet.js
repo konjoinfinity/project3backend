@@ -62,12 +62,9 @@ module.exports = {
 			{ _id: req.params.id },
 			{ $pull: { comments: deleteComment } }
 		).then(pet => {
-			pet
-				.save((err, pet) => {
-					res.json(pet);
-					console.log(err);
-				})
-				.catch(err => console.log(err));
+			pet.save((err, pet) => {
+				res.json(pet);
+			});
 		});
 
 		Comment.findByIdAndDelete(deleteComment._id).then(comment =>
